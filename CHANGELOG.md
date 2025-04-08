@@ -6,6 +6,10 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 
 ## [Unreleased]
 
+## [17.102.1-M1] - 2025-04-08
+### Changed
+- Github migration to HMCTS Organisation
+
 ## [17.102.0] - 2025-02-26
 ### Added
 - Add dependency for commons-codec 1.17.2
