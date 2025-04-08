@@ -1,0 +1,45 @@
+name: CJS Library Build & Publish
+ 
+trigger:
+  tags:
+    include:
+      - 'release-*'
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - '*'
+ 
+pr:
+  - '*'
+ 
+resources:
+  repositories:
+    - repository: cppAzureDevOpsTemplates
+      type: github
+      name: hmcts/cpp-azure-devops-templates
+      endpoint: 'hmcts'
+      ref: 'main'
+ 
+    - repository: buildSettings
+      type: github
+      name: hmcts/cjscp-build-setting
+      endpoint: 'hmcts'
+      ref: 'main'
+ 
+pool:
+  name: 'MDV-ADO-AGENT-AKS-01'
+  demands:
+    - identifier -equals centos8-j17-postgres
+ 
+variables:
+  - name: sonarqubeProject
+    value: "" #update the sonarqube project for the respective repos
+  - group: "cjs-common-platform" #this is common for all the repos
+ 
+stages:
+  - template: pipelines/cjscp-framework-build.yaml@cppAzureDevOpsTemplates
+    parameters:
+      sonarqube_project: ${{ variables['sonarqubeProject'] }}
+      coveralls_repo_token: $() # this will be the repo name in lower case, Please refer this step "Update repo token in ADO library" in confluence to update in Azure devops, e.g., $(cjscp-event-store)
