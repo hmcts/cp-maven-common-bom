@@ -34,7 +34,7 @@
         <blockhound.version>1.0.6.RELEASE</blockhound.version>
         <byte-buddy.version>1.12.22</byte-buddy.version>
         <cdi.api.version>1.2</cdi.api.version>
-        <classgraph.version>4.8.90</classgraph.version>
+        <classgraph.version>4.8.112</classgraph.version>
         <commons.beanutils.version>1.9.4</commons.beanutils.version>
         <commons-codec.version>1.17.2</commons-codec.version>
         <commons.collections.version>3.2.2</commons.collections.version>
