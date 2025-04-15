@@ -29,7 +29,7 @@
         <apache.httpclient.version>4.5.13</apache.httpclient.version>
         <apache.commons-dbcp2.version>2.9.0</apache.commons-dbcp2.version>
         <apache.tika.version>1.28.3</apache.tika.version>
-        <artemis.jms.version>2.24.0</artemis.jms.version>
+        <artemis.jms.version>2.40.0</artemis.jms.version>
         <awaitility.version>4.1.0</awaitility.version>
         <blockhound.version>1.0.6.RELEASE</blockhound.version>
         <byte-buddy.version>1.12.22</byte-buddy.version>
