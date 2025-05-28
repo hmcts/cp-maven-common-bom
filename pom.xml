@@ -85,6 +85,7 @@
         <maven-plugin-api.version>3.3.9</maven-plugin-api.version>
         <maven-plugin-testing-harness.version>3.3.0</maven-plugin-testing-harness.version>
         <metrics.version>3.1.2</metrics.version>
+        <micrometer.version>1.15.0</micrometer.version>
         <mockito.version>5.3.1</mockito.version>
         <mvel2.version>2.4.12.Fina</mvel2.version>
         <openejb.version>8.0.13</openejb.version>
@@ -1118,6 +1119,25 @@
                 <groupId>jakarta.xml.bind</groupId>
                 <artifactId>jakarta.xml.bind-api</artifactId>
                 <version>${jakarta.xml.bind-api.version}</version>
+            </dependency>
+
+            <!-- micrometer metrics -->
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-bom</artifactId>
+                <version>${micrometer.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-registry-prometheus</artifactId>
+                <version>${micrometer.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-registry-azure-monitor</artifactId>
+                <version>${micrometer.version}</version>
             </dependency>
 
         </dependencies>
