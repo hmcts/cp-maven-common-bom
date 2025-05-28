@@ -5,7 +5,9 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-- Github migration to HMCTS Organisation
+## [17.103.0] - 2025-05-28
+### Added
+  - Add dependencies for Micometer Metrics 1.15.0
 
 ## [17.102.1-M1] - 2025-04-08
 ### Changed
