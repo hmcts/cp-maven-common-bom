@@ -5,6 +5,9 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Update maven-parent-pom to 17.103.0
+
 ## [17.103.0] - 2025-05-28
 ### Added
   - Add dependencies for Micometer Metrics 1.15.0
