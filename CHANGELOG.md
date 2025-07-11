@@ -5,6 +5,8 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [17.103.1] - 2025-07-11
 ### Changed
 - Update maven-parent-pom to 17.103.0
 
