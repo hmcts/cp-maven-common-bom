@@ -5,6 +5,16 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Security
+- Update Jackson version to **2.15.0** to fix **security vulnerability CVE-2025-52999**
+  Detail: https://cwe.mitre.org/data/definitions/121.html
+- Update commons.beanutils version to **1.11.0** to fix **security vulnerability CVE-2025-48734**
+  Detail: https://cwe.mitre.org/data/definitions/284.html
+- Update resteasy version to **3.15.5.Final** to fix **security vulnerability CVE-2023-0482**
+  Detail: https://cwe.mitre.org/data/definitions/378.html
+- Update classgraph version to **4.8.112** to fix **security vulnerability CVE-2021-47621**
+  Detail: https://cwe.mitre.org/data/definitions/611.html
+
 
 ## [17.103.1] - 2025-07-11
 ### Changed

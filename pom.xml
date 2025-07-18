@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>maven-common-bom</artifactId>
-    <version>17.103.2-SNAPSHOT</version>
+    <version>17.104.0-M1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <description>Bill of materials defining standard versions for dependencies of the Microservices
         framework
@@ -34,8 +34,8 @@
         <blockhound.version>1.0.6.RELEASE</blockhound.version>
         <byte-buddy.version>1.12.22</byte-buddy.version>
         <cdi.api.version>1.2</cdi.api.version>
-        <classgraph.version>4.8.90</classgraph.version>
-        <commons.beanutils.version>1.9.4</commons.beanutils.version>
+        <classgraph.version>4.8.112</classgraph.version>
+        <commons.beanutils.version>1.11.0</commons.beanutils.version>
         <commons-codec.version>1.17.2</commons-codec.version>
         <commons.collections.version>3.2.2</commons.collections.version>
         <commons.cli.version>1.2</commons.cli.version>
@@ -56,7 +56,7 @@
         <hamcrest.regex.version>1.0.1</hamcrest.regex.version>
         <hamcrest.version>2.2</hamcrest.version>
         <hibernate.version>5.4.24.Final</hibernate.version>
-        <jackson.version>2.12.7</jackson.version>
+        <jackson.version>2.15.0</jackson.version>
         <jackson.databind.version>2.12.7.1</jackson.databind.version>
         <jakarta.xml.bind-api.version>2.3.2</jakarta.xml.bind-api.version>
         <java.8.matchers.version>1.1</java.8.matchers.version>
