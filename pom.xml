@@ -104,7 +104,7 @@
         <jayway.restassured.version>2.9.0</jayway.restassured.version>
         <!-- Update resteasy-multipart-provider version to match resteasy when we update to latest version -->
         <resteasy.version>3.15.5.Final</resteasy.version>
-        <resteasy-multipart-provider.version>3.15.1.Final</resteasy-multipart-provider.version>
+        <resteasy-multipart-provider.version>3.15.6.Final</resteasy-multipart-provider.version>
         <resteasy-jaxrs.version>3.15.1.Final</resteasy-jaxrs.version>
         <resteasy-client.version>4.7.7.Final</resteasy-client.version>
         <servlet.api.version>4.0.1</servlet.api.version>
