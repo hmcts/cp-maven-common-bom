@@ -56,7 +56,7 @@
         <hamcrest.regex.version>1.0.1</hamcrest.regex.version>
         <hamcrest.version>2.2</hamcrest.version>
         <hibernate.version>5.4.24.Final</hibernate.version>
-        <jackson.version>2.12.7</jackson.version>
+        <jackson.version>2.12.7.1</jackson.version>
         <jackson.databind.version>2.12.7.1</jackson.databind.version>
         <jakarta.xml.bind-api.version>2.3.2</jakarta.xml.bind-api.version>
         <java.8.matchers.version>1.1</java.8.matchers.version>
