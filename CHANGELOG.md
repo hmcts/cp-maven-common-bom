@@ -6,7 +6,7 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 
 ## [Unreleased]
 
-## [17.104.0-M1] - 2025-07-18
+## [17.104.0] - 2025-12-16
 ### Added
 - Add dependency on junit 4 required by deltaspike testing framework
 ### Security
