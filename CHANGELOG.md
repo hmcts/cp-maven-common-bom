@@ -6,7 +6,7 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 
 ## [Unreleased]
 
-## [21.0.0-M1] - 2026-06-02
+## [21.0.0-M2] - 2026-06-02
 ### Changed
 - Upgraded to Java 21 and Jakarta EE 10 (17.104.x release line — backport of Java 21 upgrade to the current stable release branch)
 - Jakarta EE 10 API versions: `jee.api.version` → `10.0.0`, `cdi.api.version` → `4.0.1`, `persistence-api.version` → `3.1.0`, `servlet.api.version` → `6.0.0`, `jakarta.jms-api.version` → `3.1.0`, `jakarta.xml.bind-api.version` → `4.0.0`, `jakarta.annotation-api.version` → `2.1.1`, `jakarta.inject-api.version` → `2.0.1`
