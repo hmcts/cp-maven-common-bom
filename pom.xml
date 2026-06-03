@@ -42,9 +42,6 @@
         <persistence-api.version>3.1.0</persistence-api.version>
         <servlet.api.version>6.0.0</servlet.api.version>
 
-        <!-- Legacy javax APIs — only kept for libraries that cannot yet be migrated -->
-        <javax.mail.version>1.5.0</javax.mail.version>
-
         <!-- JBoss / WildFly -->
         <jboss-ejb3-ext-api.version>2.4.0.Final</jboss-ejb3-ext-api.version>
         <jboss-logging.version>3.6.3.Final</jboss-logging.version>
@@ -82,7 +79,6 @@
         <jackson.version.annotations>2.15.4</jackson.version.annotations>
 
         <!-- JSON -->
-        <glassfish-javax-json.version>1.1.4</glassfish-javax-json.version>
         <glassfish-json.version>2.0.1</glassfish-json.version>
         <johnzon.version>2.0.2</johnzon.version>
         <org.everit.json.schema.version>1.6.0</org.everit.json.schema.version>
@@ -191,7 +187,7 @@
             </dependency>
             <dependency>
                 <groupId>jakarta.enterprise</groupId>
-                <artifactId>jakarta.cdi-api</artifactId>
+                <artifactId>jakarta.enterprise.cdi-api</artifactId>
                 <version>${cdi.api.version}</version>
             </dependency>
             <dependency>
@@ -233,19 +229,6 @@
                 <groupId>jakarta.xml.bind</groupId>
                 <artifactId>jakarta.xml.bind-api</artifactId>
                 <version>${jakarta.xml.bind-api.version}</version>
-            </dependency>
-
-            <!-- ===== Legacy javax APIs — only kept for libraries that cannot yet be migrated ===== -->
-            <dependency>
-                <groupId>com.sun.mail</groupId>
-                <artifactId>javax.mail</artifactId>
-                <version>${javax.mail.version}</version>
-            </dependency>
-            <!-- Old javax.xml.bind API needed by legacy libraries (e.g. org.raml:raml-parser) on Java 11+ -->
-            <dependency>
-                <groupId>javax.xml.bind</groupId>
-                <artifactId>jaxb-api</artifactId>
-                <version>${jaxb.version}</version>
             </dependency>
 
             <!-- ===== JBoss / WildFly ===== -->
@@ -650,27 +633,9 @@
                 <version>${glassfish-json.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.glassfish</groupId>
-                <artifactId>javax.json</artifactId>
-                <version>${glassfish-javax-json.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.json</groupId>
                 <artifactId>json</artifactId>
                 <version>${org.json.version}</version>
-            </dependency>
-
-            <!-- ===== JAXB ===== -->
-            <!-- Needed for Java 11+ as no longer included by default -->
-            <dependency>
-                <groupId>com.sun.xml.bind</groupId>
-                <artifactId>jaxb-core</artifactId>
-                <version>${jaxb-core.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.sun.xml.bind</groupId>
-                <artifactId>jaxb-impl</artifactId>
-                <version>${jaxb.version}</version>
             </dependency>
 
             <!-- ===== Logging ===== -->
