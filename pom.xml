@@ -39,6 +39,7 @@
         <jakarta.transaction-api.version>2.0.1</jakarta.transaction-api.version>
         <jakarta.xml.bind-api.version>4.0.2</jakarta.xml.bind-api.version>
         <jee.api.version>11.0.0</jee.api.version>
+        <jakarta.el-api.version>6.0.1</jakarta.el-api.version>
         <persistence-api.version>3.2.0</persistence-api.version>
         <servlet.api.version>6.1.0</servlet.api.version>
 
@@ -140,7 +141,7 @@
         <mvel2.version>2.5.2.Final</mvel2.version>
         <org.owasp.encoder.version>1.4.0</org.owasp.encoder.version>
         <raml-parser.version>0.8.18</raml-parser.version>
-        <reflections.version>0.9.10</reflections.version>
+        <reflections.version>0.10.2</reflections.version>
         <xbean.version>4.30</xbean.version>
 
         <!-- Test dependencies -->
@@ -178,6 +179,12 @@
                 <groupId>jakarta.platform</groupId>
                 <artifactId>jakarta.jakartaee-api</artifactId>
                 <version>${jee.api.version}</version>
+            </dependency>
+            <!-- Pin to resolve jakarta.jakartaee-api:11.0.0 convergence conflict: cdi-el-api pulls 6.0.0, web-api pulls 6.0.1 -->
+            <dependency>
+                <groupId>jakarta.el</groupId>
+                <artifactId>jakarta.el-api</artifactId>
+                <version>${jakarta.el-api.version}</version>
             </dependency>
             <dependency>
                 <groupId>jakarta.activation</groupId>
