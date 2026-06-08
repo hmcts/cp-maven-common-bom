@@ -6,6 +6,22 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 
 ## [Unreleased]
 
+## [25.104.0-M2] - 2026-06-08
+### Changed
+- Added `jakarta.el:jakarta.el-api:6.0.1` to `dependencyManagement` — pins convergence conflict where `jakarta.jakartaee-api:11.0.0` pulls both `6.0.1` (direct) and `6.0.0` (via `cdi-el-api:4.1.0`), resolving `dependencyConvergence` enforcer failure
+- Upgraded `reflections` from `0.9.10` to `0.10.2`
+- Bumped parent `maven-parent-pom` to `25.104.0-M2`
+
+## [25.104.0-M1] - 2026-06-08
+### Changed
+- Upgraded to Java 25 / WildFly 40 / Jakarta EE 11 (25.104.x release line)
+- Upgraded WildFly: `wildfly.version` → `40.0.0.Final`
+- Upgraded Jakarta EE 11 APIs: `jee.api.version` → `11.0.0`, `cdi.api.version` → `4.1.0`, `persistence-api.version` → `3.2.0`, `servlet.api.version` → `6.1.0`, `jakarta.xml.bind-api.version` → `4.0.2`, `jakarta.json-api.version` → `2.1.3`, `jakarta.annotation-api.version` → `3.0.0`, `jakarta.mail-api.version` → `2.1.3`, `jakarta.transaction-api.version` → `2.0.1`, `jakarta.activation-api.version` → `2.1.3`
+- Upgraded JBoss libraries: `jboss-ejb3-ext-api` → `2.4.0.Final`, `jboss-logging` → `3.6.3.Final`, `jboss-vfs` → `3.3.2.Final`
+- Upgraded RESTEasy: `resteasy-client` → `7.0.0.Final`
+- Changed Artemis groupId from `org.apache.activemq` to `org.apache.artemis` (new groupId in WildFly 40 / Artemis 2.x)
+- Bumped parent `maven-parent-pom` to `25.104.0-M1`
+
 ## [21.0.0-SNAPSHOT] - 2026-04-20
 ### Security
 - Update `plexus-utils` version to **3.6.0** to fix **security vulnerability CVE-2022-4244**
