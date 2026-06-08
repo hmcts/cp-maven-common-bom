@@ -39,6 +39,7 @@
         <jakarta.transaction-api.version>2.0.1</jakarta.transaction-api.version>
         <jakarta.xml.bind-api.version>4.0.2</jakarta.xml.bind-api.version>
         <jee.api.version>11.0.0</jee.api.version>
+        <jakarta.el-api.version>6.0.1</jakarta.el-api.version>
         <persistence-api.version>3.2.0</persistence-api.version>
         <servlet.api.version>6.1.0</servlet.api.version>
 
@@ -178,6 +179,12 @@
                 <groupId>jakarta.platform</groupId>
                 <artifactId>jakarta.jakartaee-api</artifactId>
                 <version>${jee.api.version}</version>
+            </dependency>
+            <!-- Pin to resolve jakarta.jakartaee-api:11.0.0 convergence conflict: cdi-el-api pulls 6.0.0, web-api pulls 6.0.1 -->
+            <dependency>
+                <groupId>jakarta.el</groupId>
+                <artifactId>jakarta.el-api</artifactId>
+                <version>${jakarta.el-api.version}</version>
             </dependency>
             <dependency>
                 <groupId>jakarta.activation</groupId>
