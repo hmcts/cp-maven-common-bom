@@ -140,7 +140,7 @@
         <mvel2.version>2.5.2.Final</mvel2.version>
         <org.owasp.encoder.version>1.4.0</org.owasp.encoder.version>
         <raml-parser.version>0.8.18</raml-parser.version>
-        <reflections.version>0.9.10</reflections.version>
+        <reflections.version>0.10.2</reflections.version>
         <xbean.version>4.30</xbean.version>
 
         <!-- Test dependencies -->
