@@ -6,6 +6,10 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 
 ## [Unreleased]
 
+## [25.104.0-M5] - 2026-06-18
+### Changed
+- Bumped parent `maven-parent-pom` to `25.104.0-M5` — picks up `liquibase.version=5.0.3`
+
 ## [25.104.0-M2] - 2026-06-08
 ### Changed
 - Added `jakarta.el:jakarta.el-api:6.0.1` to `dependencyManagement` — pins convergence conflict where `jakarta.jakartaee-api:11.0.0` pulls both `6.0.1` (direct) and `6.0.0` (via `cdi-el-api:4.1.0`), resolving `dependencyConvergence` enforcer failure
