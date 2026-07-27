@@ -6,7 +6,7 @@
     <parent>
         <groupId>uk.gov.justice</groupId>
         <artifactId>maven-parent-pom</artifactId>
-        <version>25.104.0-M6</version>
+        <version>25.104.0-M7</version>
     </parent>
 
     <artifactId>maven-common-bom</artifactId>
@@ -76,10 +76,10 @@
         <!-- Jackson: aligned to WildFly 40's bundled version (2.21.1) -->
         <!-- jackson-dataformat-yaml is pinned at 2.14.3 (last version using snakeyaml 1.x)
              because 2.15+ requires snakeyaml 2.x which breaks the raml-parser Maven plugin -->
-        <jackson-datatype-jakarta-jsonp.version>2.21.4</jackson-datatype-jakarta-jsonp.version>
-        <jackson.databind.version>2.21.4</jackson.databind.version>
+        <jackson-datatype-jakarta-jsonp.version>2.21.5</jackson-datatype-jakarta-jsonp.version>
+        <jackson.databind.version>2.21.5</jackson.databind.version>
         <jackson.dataformat.yaml.version>2.14.3</jackson.dataformat.yaml.version>
-        <jackson.version>2.21.4</jackson.version>
+        <jackson.version>2.21.5</jackson.version>
         <jackson.version.annotations>2.21</jackson.version.annotations>
 
         <!-- JSON -->
@@ -1143,25 +1143,17 @@
                 <artifactId>jolokia-client-java</artifactId>
                 <version>${jokolia.client.java.version}</version>
             </dependency>
+            <!-- JUnit BOM manages the whole coherent JUnit 5 release train in one place: Jupiter (5.x:
+                 junit-jupiter-api/-engine/-params), Vintage (junit-vintage-engine) AND the JUnit Platform (1.x:
+                 junit-platform-commons/-engine/-launcher/-console). Importing the BOM keeps junit-platform-launcher
+                 aligned with junit-platform-engine — a hard-coded launcher version drifts from the engine and breaks
+                 Surefire/Failsafe test discovery ("OutputDirectoryCreator not available; unaligned versions"). -->
             <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-api</artifactId>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
                 <version>${junit.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-engine</artifactId>
-                <version>${junit.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-params</artifactId>
-                <version>${junit.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.junit.vintage</groupId>
-                <artifactId>junit-vintage-engine</artifactId>
-                <version>${junit.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.mockito</groupId>

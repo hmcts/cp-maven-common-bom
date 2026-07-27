@@ -6,6 +6,13 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 
 ## [Unreleased]
 
+## [25.104.0-M6] - 2026-07-27
+### Changed
+- Import the `org.junit:junit-bom` instead of pinning individual `junit-jupiter` / `junit-vintage` versions, so `junit-platform-launcher` stays aligned with `junit-platform-engine` (a drifting launcher version breaks Surefire/Failsafe test discovery — "OutputDirectoryCreator not available").
+### Security
+- Bumped `jackson` (core, databind, dataformat-csv/xml, datatype-*, module-parameter-names, datatype-jakarta-jsonp) from `2.21.4` to `2.21.5` to fix **CVE-2026-54515** (`@JsonIgnoreProperties` case-insensitive bypass in `jackson-databind`). `jackson-dataformat-yaml` stays pinned at `2.14.3` and `jackson-annotations` at `2.21` (snakeyaml 1.x lockstep — see `cp-maven-parent-pom`).
+  Detail: https://nvd.nist.gov/vuln/detail/CVE-2026-54515
+
 ## [25.104.0-M5] - 2026-06-18
 ### Changed
 - Bumped parent `maven-parent-pom` to `25.104.0-M5` — picks up `liquibase.version=5.0.3`
