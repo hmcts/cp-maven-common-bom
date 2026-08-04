@@ -6,6 +6,10 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 
 ## [Unreleased]
 
+## [25.104.0-M7] - 2026-08-04
+### Changed
+- Bumped `artemis.jms.version` `2.53.0` → `2.54.0` — aligns the managed Apache Artemis client/server artifacts (`artemis-jakarta-client`, `artemis-jms-client`, `artemis-core-client`, `artemis-commons`, `artemis-server`, etc.) with the Java-17/production Artemis 2.54 upgrade and the 2.54.0 local broker in `cpp-developers-docker`. Verified with users-groups full ITs (96/0/0) against a 2.54 broker.
+
 ## [25.104.0-M6] - 2026-07-27
 ### Changed
 - Import the `org.junit:junit-bom` instead of pinning individual `junit-jupiter` / `junit-vintage` versions, so `junit-platform-launcher` stays aligned with `junit-platform-engine` (a drifting launcher version breaks Surefire/Failsafe test discovery — "OutputDirectoryCreator not available").

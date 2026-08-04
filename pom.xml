@@ -59,7 +59,7 @@
         <resteasy.version>7.0.0.Final</resteasy.version>
 
         <!-- Apache Artemis -->
-        <artemis.jms.version>2.53.0</artemis.jms.version>
+        <artemis.jms.version>2.54.0</artemis.jms.version>
         <geronimo-jms.version>1.0-alpha-2</geronimo-jms.version>
 
         <!-- Apache Commons -->
