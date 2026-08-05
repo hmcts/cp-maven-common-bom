@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>maven-common-bom</artifactId>
-    <version>25.104.0-M7</version>
+    <version>25.104.0-M8-SNAPSHOT</version>
     <packaging>pom</packaging>
     <description>Bill of materials defining standard versions for dependencies of the Microservices
         framework
