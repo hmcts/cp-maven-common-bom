@@ -6,29 +6,19 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 
 ## [Unreleased]
 
-## [25.104.0-M7] - 2026-08-04
-### Changed
-- Bumped `artemis.jms.version` `2.53.0` → `2.54.0` — aligns the managed Apache Artemis client/server artifacts (`artemis-jakarta-client`, `artemis-jms-client`, `artemis-core-client`, `artemis-commons`, `artemis-server`, etc.) with the Java-17/production Artemis 2.54 upgrade and the 2.54.0 local broker in `cpp-developers-docker`. Verified with users-groups full ITs (96/0/0) against a 2.54 broker.
+## [25.104.0] - 2026-09-07
+First official (non-milestone) release of the Java 25 / WildFly 40 / Jakarta EE 11 line,
+consolidating milestones `25.104.0-M1` to `25.104.0-M7` and the never-released Java 21 /
+Jakarta EE 10 step that preceded them.
 
-## [25.104.0-M6] - 2026-07-27
-### Changed
-- Import the `org.junit:junit-bom` instead of pinning individual `junit-jupiter` / `junit-vintage` versions, so `junit-platform-launcher` stays aligned with `junit-platform-engine` (a drifting launcher version breaks Surefire/Failsafe test discovery — "OutputDirectoryCreator not available").
+### Added
+- `jakarta.el:jakarta.el-api:6.0.1` to `dependencyManagement` — pins the convergence conflict where `jakarta.jakartaee-api:11.0.0` pulls both `6.0.1` (direct) and `6.0.0` (via `cdi-el-api:4.1.0`), resolving a `dependencyConvergence` enforcer failure
+- `jakarta.enterprise:jakarta.enterprise.cdi-api` to `dependencyManagement` alongside the existing `jakarta.cdi-api`, both at `${cdi.api.version}`
+- Import of `org.junit:junit-bom` in place of individually pinned `junit-jupiter-*` / `junit-vintage-engine` versions, so `junit-platform-launcher` stays aligned with `junit-platform-engine` (a drifting launcher version breaks Surefire/Failsafe test discovery — "OutputDirectoryCreator not available")
+
 ### Security
-- Bumped `jackson` (core, databind, dataformat-csv/xml, datatype-*, module-parameter-names, datatype-jakarta-jsonp) from `2.21.4` to `2.21.5` to fix **CVE-2026-54515** (`@JsonIgnoreProperties` case-insensitive bypass in `jackson-databind`). `jackson-dataformat-yaml` stays pinned at `2.14.3` and `jackson-annotations` at `2.21` (snakeyaml 1.x lockstep — see `cp-maven-parent-pom`).
+- Bumped `jackson` (core, databind, dataformat-csv/xml, datatype-*, module-parameter-names, datatype-jakarta-jsonp) to `2.21.5` to fix **CVE-2026-54515** (`@JsonIgnoreProperties` case-insensitive bypass in `jackson-databind`). `jackson-dataformat-yaml` stays pinned at `2.14.3` and `jackson-annotations` at `2.21` (snakeyaml 1.x lockstep — see `cp-maven-parent-pom`).
   Detail: https://nvd.nist.gov/vuln/detail/CVE-2026-54515
-
-## [25.104.0-M5] - 2026-06-18
-### Changed
-- Bumped parent `maven-parent-pom` to `25.104.0-M5` — picks up `liquibase.version=5.0.3`
-
-## [25.104.0-M2] - 2026-06-08
-### Changed
-- Added `jakarta.el:jakarta.el-api:6.0.1` to `dependencyManagement` — pins convergence conflict where `jakarta.jakartaee-api:11.0.0` pulls both `6.0.1` (direct) and `6.0.0` (via `cdi-el-api:4.1.0`), resolving `dependencyConvergence` enforcer failure
-- Upgraded `reflections` from `0.9.10` to `0.10.2`
-- Bumped parent `maven-parent-pom` to `25.104.0-M2`
-
-## [25.104.0-M1] - 2026-06-08
-### Security
 - Updated `plexus-utils` version to **3.6.0** to fix **security vulnerability CVE-2022-4244**
   Detail: https://nvd.nist.gov/vuln/detail/CVE-2022-4244
 - Updated `plexus-utils` version to **3.6.0** to fix **security vulnerability CVE-2022-4245**
@@ -37,16 +27,17 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
   Detail: https://nvd.nist.gov/vuln/detail/CVE-2023-41329
 ### Changed
 - Upgraded to Java 25 / WildFly 40 / Jakarta EE 11 (25.104.x release line)
-- Upgraded WildFly: `wildfly.version` → `40.0.0.Final`
+- Upgraded WildFly: `wildfly.version` `34.0.1.Final` → `40.0.0.Final`
 - Upgraded Jakarta EE 11 APIs: `jee.api.version` → `11.0.0`, `cdi.api.version` → `4.1.0`, `persistence-api.version` → `3.2.0`, `servlet.api.version` → `6.1.0`, `jakarta.xml.bind-api.version` → `4.0.2`, `jakarta.json-api.version` → `2.1.3`, `jakarta.annotation-api.version` → `3.0.0`, `jakarta.mail-api.version` → `2.1.3`, `jakarta.transaction-api.version` → `2.0.1`, `jakarta.activation-api.version` → `2.1.3`
 - Replaced `javax.activation:activation` with `jakarta.activation:jakarta.activation-api`; replaced `javax.persistence:persistence-api` with `jakarta.persistence:jakarta.persistence-api`
 - Added `jackson-datatype-jakarta-jsonp` to managed dependencies; updated JSON-P: `glassfish-json.version` → `2.0.1`, `javax.json.version` → `2.1.3`
-- Changed Artemis groupId from `org.apache.activemq` to `org.apache.artemis` (new groupId in WildFly 40 / Artemis 2.x)
-- Upgraded RESTEasy: `resteasy-client` → `7.0.0.Final`
+- Artemis: changed groupId from `org.apache.activemq` to `org.apache.artemis` (new groupId in WildFly 40 / Artemis 2.x), and bumped `artemis.jms.version` `2.40.0` → `2.54.0` — aligns the managed client/server artifacts (`artemis-jakarta-client`, `artemis-jms-client`, `artemis-core-client`, `artemis-commons`, `artemis-server`, etc.) with the production Artemis 2.54 upgrade and the 2.54.0 local broker in `cpp-developers-docker`. Verified with users-groups full ITs (96/0/0) against a 2.54 broker
+- Upgraded RESTEasy: `resteasy.version`, `resteasy-client.version` and `resteasy-multipart-provider.version` `6.2.15.Final` → `7.0.0.Final`; `resteasy-jaxrs.version` `3.15.3.Final` → `4.7.9.Final`
 - Upgraded JBoss libraries: `jboss-ejb3-ext-api` → `2.4.0.Final`, `jboss-logging` → `3.6.3.Final`, `jboss-vfs` → `3.3.2.Final`
 - `hibernate.version`: `5.4.24.Final` → `6.6.1.Final` (Hibernate ORM 6, matches WildFly 40; group id changed to `org.hibernate.orm`)
-- `jackson.version` / `jackson.databind.version`: `2.12.7` → `2.21.2`; added `jackson.version.annotations=2.21`
-- `weld.version`: `3.1.4.Final` → `5.1.2.Final` (Weld 5.x ships with WildFly 32+ and uses `jakarta.inject`)
+- `jackson.version` / `jackson.databind.version`: `2.12.7` → `2.21.5`; added `jackson.version.annotations=2.21`
+- `weld.version`: `3.1.4.Final` → `6.0.0.Final` (Weld 6 ships with WildFly 40 and uses `jakarta.inject`); `weld-junit5.version`: `1.2.2.Final` → `4.0.2.Final`
+- `reflections.version`: `0.9.10` → `0.10.2`
 - `openejb.version`: `8.0.13` → `10.1.4` (Jakarta EE 10 compatible)
 - `xbean.version`: `4.11` → `4.30`
 - `log4j.version`: `2.17.2` → `2.25.4`
@@ -64,8 +55,12 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 - `classgraph.version`: `4.8.90` → `4.8.184`; `apache.tika.version`: `1.28.3` → `3.3.0`; `cucumber.version`: `7.12.1` → `7.34.3`; `jsonpath.version`: `2.9.0` → `2.10.0`; `jsonassert.version`: `1.5.0` → `1.5.3`
 - `awaitility.version`: `4.1.0` → `4.3.0`; `blockhound.version`: `1.0.6.RELEASE` → `1.0.16.RELEASE`; `apache.httpclient.version`: `4.5.13` → `4.5.14`
 - `org.owasp.encoder.version`: `1.2.3` → `1.4.0`; `maven-plugin-annotations.version`: `3.7.1` → `3.15.2`; `mvel2.version`: `2.4.12.Final` → `2.5.2.Final`
-- Bumped parent `maven-parent-pom` to `25.104.0-M1`
-- Not upgraded (intentional): `jackson.dataformat.yaml.version` pinned at `2.14.3` (snakeyaml 1.x required by raml-parser); Maven core/compat/model/plugin-api stay at `3.3.9` (tied to `maven-aether-provider`); `disruptor` at `3.4.4` (4.0.0 breaking API); `hamcrest` at `2.2` (3.0 removes deprecated APIs); `reflections` at `0.9.10` (0.10.x breaking API); `diff.utils` at `1.3.0` (coordinates changed in newer versions)
+- Bumped parent `maven-parent-pom` to the released `25.104.0` — picks up Java 25 / Jakarta EE 11 targeting (`java.major.version=25`, `enforcer.java.version.range=[25,)`) and `liquibase.version=5.0.3`
+- Not upgraded (intentional): `jackson.dataformat.yaml.version` pinned at `2.14.3` (snakeyaml 1.x required by raml-parser); Maven core/compat/model/plugin-api stay at `3.3.9` (tied to `maven-aether-provider`); `disruptor` at `3.4.4` (4.0.0 breaking API); `hamcrest` at `2.2` (3.0 removes deprecated APIs); `diff.utils` at `1.3.0` (coordinates changed in newer versions)
+
+### Removed
+- The `org.jboss.resteasy:resteasy-jaxrs` managed dependency, along with its `jakarta.activation` exclusions — RESTEasy 7 no longer publishes that artifact. `resteasy-jaxrs.version` is now unreferenced by this BOM
+- The `org.hamcrest:hamcrest` exclusion from `json-path-assert`
 
 ## [17.104.0-M1] - 2025-07-18
 ### Added
