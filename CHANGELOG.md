@@ -4,7 +4,9 @@ All notable changes to this project will be documented in this file, which follo
 on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [25.104.1] - 2026-09-11
+### Changed
+- Updated the parent `maven-parent-pom` to 25.104.1 to take the changes from it
 
 ## [25.104.0] - 2026-09-07
 First official (non-milestone) release of the Java 25 / WildFly 40 / Jakarta EE 11 line,
