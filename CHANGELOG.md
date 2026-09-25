@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file, which follo
 on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+### Security
+- `micrometer` 1.16.4 → 1.16.7: CVE-2026-40984, CVE-2026-40983 (DoS in the HTTP and gRPC server instrumentation)
+- `log4j` 2.25.4 → 2.25.5: CVE-2026-49844
+- `plexus-utils` 3.6.0 → 3.6.2: CVE-2025-67030 (directory traversal in `extractFile`; build time only)
+
+### Changed
+- `jolokia-client-java` 2.0.0-M3 → 2.0.3, replacing a milestone release with the GA line
+
 ## [25.104.1] - 2026-09-11
 ### Changed
 - Updated the parent `maven-parent-pom` to 25.104.1 to take the changes from it

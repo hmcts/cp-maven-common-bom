@@ -91,7 +91,7 @@
         <parsson.version>1.1.7</parsson.version>
 
         <!-- Logging -->
-        <log4j.version>2.25.4</log4j.version>
+        <log4j.version>2.25.5</log4j.version>
         <slf4j.version>2.0.17</slf4j.version>
 
         <!-- Hibernate ORM -->
@@ -113,10 +113,10 @@
         <maven-plugin-api.version>3.3.9</maven-plugin-api.version>
         <maven-plugin-testing-harness.version>3.3.0</maven-plugin-testing-harness.version>
         <org.eclipse.sisu.plexus.version>0.3.2</org.eclipse.sisu.plexus.version>
-        <plexus-utils.version>3.6.0</plexus-utils.version>
+        <plexus-utils.version>3.6.2</plexus-utils.version>
 
         <!-- Micrometer -->
-        <micrometer.version>1.16.4</micrometer.version>
+        <micrometer.version>1.16.7</micrometer.version>
 
         <!-- Apache HTTP Client -->
         <apache.httpclient.version>4.5.14</apache.httpclient.version>
@@ -154,7 +154,7 @@
         <jayway.restassured.version>2.9.0</jayway.restassured.version>
         <jcommander.version>1.82</jcommander.version>
         <jglue-cdi-unit.version>4.0.1</jglue-cdi-unit.version>
-        <jokolia.client.java.version>2.0.0-M3</jokolia.client.java.version>
+        <jokolia.client.java.version>2.0.3</jokolia.client.java.version>
         <jsonassert.version>1.5.3</jsonassert.version>
         <jsonpath.version>2.10.0</jsonpath.version>
         <junit.version>5.14.3</junit.version>
