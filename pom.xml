@@ -78,7 +78,7 @@
         <junit.version>5.9.3</junit.version>
         <!-- required for deltaspike testing framework. Remove once deltaspike is updated -->
         <junit4.version>4.13.2</junit4.version>
-        <log4j.version>2.17.2</log4j.version>
+        <log4j.version>2.25.5</log4j.version>
         <maven-aether-provider.version>3.3.9</maven-aether-provider.version>
         <maven-compat.version>3.3.9</maven-compat.version>
         <maven-core.version>3.3.9</maven-core.version>
