@@ -6,6 +6,139 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 
 ## [Unreleased]
 
+## [21.0.0-SNAPSHOT] - 2026-04-20
+### Security
+- Update `plexus-utils` version to **3.6.0** to fix **security vulnerability CVE-2022-4244**
+  Detail: https://nvd.nist.gov/vuln/detail/CVE-2022-4244
+- Update `plexus-utils` version to **3.6.0** to fix **security vulnerability CVE-2022-4245**
+  Detail: https://nvd.nist.gov/vuln/detail/CVE-2022-4245
+- Update `artemis.jms` version to **2.40.0** to fix **security vulnerability CVE-2024-32114**
+  Detail: https://nvd.nist.gov/vuln/detail/CVE-2024-32114
+- Update `artemis.jms` version to **2.40.0** to fix **security vulnerability CVE-2023-50780**
+  Detail: https://nvd.nist.gov/vuln/detail/CVE-2023-50780
+- Update `resteasy` version to **6.2.15.Final** to fix **multiple security vulnerabilities in RESTEasy 3.x** (unsafe deserialization, input validation)
+  Detail: https://access.redhat.com/security/cve
+- Update `wildfly` version to **34.0.1.Final** to fix **multiple security vulnerabilities in WildFly 26.x**
+  Detail: https://www.wildfly.org/news/
+- Update `wiremock` version to **3.13.2** to fix **security vulnerability CVE-2023-41329** (DNS rebinding attack on WireMock admin API)
+  Detail: https://nvd.nist.gov/vuln/detail/CVE-2023-41329
+### Changed
+- Upgraded to Java 21 and Jakarta EE 10; bumped project version to `21.0.0-SNAPSHOT`
+- Jakarta EE 10 API versions: `jee.api.version` → `10.0.0`, `servlet.api.version` → `6.0.0`, `cdi.api.version` → `4.0.1`, `persistence-api.version` → `3.1.0`, `jakarta.xml.bind-api.version` → `4.0.0`
+- Replaced `javax.activation:activation` with `jakarta.activation:jakarta.activation-api`; replaced `javax.persistence:persistence-api` with `jakarta.persistence:jakarta.persistence-api`
+- Added `jackson-datatype-jakarta-jsonp` to managed dependencies; updated JSON-P: `glassfish-json.version` → `2.0.1`, `javax.json.version` → `2.1.3`
+- `wildfly.version`: `26.1.2.Final` → `34.0.1.Final`
+- `artemis.jms.version`: `2.24.0` → `2.40.0`
+- `weld.version`: `3.1.4.Final` → `5.1.2.Final` (Weld 5.x ships with WildFly 32+ and uses `jakarta.inject`; Weld 3.x caused `javax.inject.Provider not found` on the Jakarta EE 10 classpath)
+- `hibernate.version`: `5.4.24.Final` → `6.6.1.Final` (Hibernate ORM 6, matches WildFly 34; group id changed to `org.hibernate.orm`)
+- `resteasy.version` / `resteasy-client.version` / `resteasy-multipart-provider.version`: `3.15.5.Final` → `6.2.15.Final`
+- `jackson.version` / `jackson.databind.version`: `2.15.4` → `2.21.2`; added `jackson.version.annotations=2.21`
+- `openejb.version`: `8.0.13` → `10.1.4` (Jakarta EE 10 compatible)
+- `xbean.version`: `4.11` → `4.30`
+- `log4j.version`: `2.17.2` → `2.25.4`
+- `slf4j.version`: `2.0.6` → `2.0.17`
+- `junit.version`: `5.9.3` → `5.14.3`
+- `mockito.version`: `5.3.1` → `5.23.0`
+- `wiremock.version`: `3.0.0-beta-10` → `3.13.2`
+- `io.restassured.version`: `4.4.0` → `5.5.7` (Jakarta EE namespace compatible)
+- `byte-buddy.version`: `1.12.22` → `1.18.8`
+- `jboss-logging.version`: `3.5.0.Final` → `3.6.3.Final`
+- `jboss-vfs.version`: `3.2.12.Final` → `3.3.2.Final`
+- `jboss-ejb3-ext-api.version`: `2.2.0.Final` → `2.4.0.Final`
+- `guava.version`: `32.1.3-jre` → `33.5.0-jre`
+- `micrometer.version`: `1.15.0` → `1.16.4`
+- `apache.commons-dbcp2.version`: `2.9.0` → `2.14.0`; `commons-codec.version`: `1.17.2` → `1.21.0`; `commons.cli.version`: `1.2` → `1.11.0`; `commons.io.version`: `2.18.0` → `2.21.0`; `commons.lang3.version`: `3.18.0` → `3.20.0`; `commons.logging.version`: `1.2` → `1.3.6`; `commons.validator.version`: `1.5.1` → `1.10.1`
+- `parsson.version`: `1.1.0` → `1.1.7`; `johnzon.version`: `1.2.9` → `2.0.2`; `org.json.version`: `20231013` → `20251224`
+- `javassist.version`: `3.23.1-GA` → `3.30.2-GA`; `javapoet.version`: `1.6.1` → `1.13.0`; `org.ow2.asm.version`: `9.3` → `9.9.1`
+- `classgraph.version`: `4.8.112` → `4.8.184`; `apache.tika.version`: `3.2.2` → `3.3.0`; `cucumber.version`: `7.12.1` → `7.34.3`; `jsonpath.version`: `2.9.0` → `2.10.0`; `jsonassert.version`: `1.5.0` → `1.5.3`
+- `org.owasp.encoder.version`: `1.2.3` → `1.4.0`; `maven-plugin-annotations.version`: `3.7.1` → `3.15.2`; `mvel2.version`: `2.4.12.Final` → `2.5.2.Final`
+- Not upgraded (intentional): `jackson.dataformat.yaml.version` pinned at `2.14.3` (snakeyaml 1.x required by raml-parser); Maven core/compat/model/plugin-api stay at `3.3.9` (tied to `maven-aether-provider`); `disruptor` at `3.4.4` (4.0.0 breaking API); `hamcrest` at `2.2` (3.0 removes deprecated APIs); `reflections` at `0.9.10` (0.10.x breaking API); `diff.utils` at `1.3.0` (coordinates changed in newer versions)
+
+## [21.0.0-SNAPSHOT] - 2026-04-02
+### Changed
+- Updated all third-party dependencies to their latest compatible versions:
+  - `resteasy.version` / `resteasy-client.version` / `resteasy-multipart-provider.version`: `6.2.4.Final` → `6.2.15.Final`
+  - `jackson.version` / `jackson.databind.version` / `jackson-datatype-jakarta-jsonp.version`: `2.15.4` → `2.21.2`; added `jackson.version.annotations=2.21` (from 2.21+ Jackson dropped the patch number from `jackson-annotations`)
+  - `log4j.version`: `2.17.2` → `2.25.4`
+  - `slf4j.version`: `2.0.6` → `2.0.17`
+  - `junit.version`: `5.9.3` → `5.14.3`
+  - `openejb.version`: `10.0.0` → `10.1.4`
+  - `xbean.version`: `4.11` → `4.30`
+  - `weld.version`: `3.1.4.Final` → `3.1.9.Final`
+  - `hibernate.version`: `5.4.24.Final` → `5.6.15.Final`
+  - `byte-buddy.version`: `1.17.7` → `1.18.8`
+  - `jboss-logging.version`: `3.5.0.Final` → `3.6.3.Final`
+  - `jboss-vfs.version`: `3.2.12.Final` → `3.3.2.Final`
+  - `jboss-ejb3-ext-api.version`: `2.2.0.Final` → `2.4.0.Final`
+  - `javapoet.version`: `1.6.1` → `1.13.0`
+  - `javassist.version`: `3.23.1-GA` → `3.30.2-GA`
+  - `org.ow2.asm.version`: `9.3` → `9.9.1`
+  - `guava.version`: `32.1.3-jre` → `33.5.0-jre`
+  - `parsson.version`: `1.1.0` → `1.1.7`
+  - `johnzon.version`: `2.0.1` → `2.0.2`
+  - `org.json.version`: `20231013` → `20251224`
+  - `apache.commons-dbcp2.version`: `2.9.0` → `2.14.0`
+  - `commons-codec.version`: `1.17.2` → `1.21.0`
+  - `commons.cli.version`: `1.2` → `1.11.0`
+  - `commons.io.version`: `2.18.0` → `2.21.0`
+  - `commons.lang3.version`: `3.18.0` → `3.20.0`
+  - `commons.logging.version`: `1.2` → `1.3.6`
+  - `commons.validator.version`: `1.5.1` → `1.10.1`
+  - `micrometer.version`: `1.15.0` → `1.16.4`
+  - `apache.httpclient.version`: `4.5.13` → `4.5.14`
+  - `awaitility.version`: `4.1.0` → `4.3.0`
+  - `blockhound.version`: `1.0.6.RELEASE` → `1.0.16.RELEASE`
+  - `cucumber.version`: `7.12.1` → `7.34.3`
+  - `jsonassert.version`: `1.5.0` → `1.5.3`
+  - `jsonpath.version`: `2.9.0` → `2.10.0`
+  - `io.restassured.version`: `4.4.0` → `5.5.7` (Jakarta EE namespace compatible)
+  - `wiremock.version`: `3.10.0` → `3.13.2`
+  - `classgraph.version`: `4.8.112` → `4.8.184`
+  - `apache.tika.version`: `3.2.2` → `3.3.0`
+  - `expiringmap.version`: `0.5.7` → `0.5.11`
+  - `findbugs.version`: `3.0.0` → `3.0.1`
+  - `jcommander.version`: `1.48` → `1.82`
+  - `jolt.version`: `0.1.1` → `0.1.8`
+  - `metrics.version`: `3.1.2` → `3.2.3`
+  - `mvel2.version`: `2.4.12.Final` → `2.5.2.Final` (also fixed typo `Fina` → `Final`)
+  - `org.owasp.encoder.version`: `1.2.3` → `1.4.0`
+  - `maven-plugin-annotations.version`: `3.9.0` → `3.15.2`
+- Not upgraded (intentional):
+  - `jackson.dataformat.yaml.version` stays at `2.14.3` — pinned to snakeyaml 1.x for raml-parser plugin compatibility
+  - `artemis.jms.version` stays at `2.40.0` — must align with standalone Docker broker version
+  - `wildfly.version` stays at `34.0.1.Final` — no newer 34.x patch available; runtime version tracked separately
+  - Maven core/compat/model/plugin-api stay at `3.3.9` — tied to archived `maven-aether-provider`
+  - `disruptor` stays at `3.4.4` — 4.0.0 has breaking API changes
+  - `hamcrest` stays at `2.2` — 3.0 removes previously deprecated APIs used in tests
+  - `reflections` stays at `0.9.10` — 0.10.x has breaking API changes
+  - `diff.utils` stays at `1.3.0` — artifact coordinates changed in newer versions
+
+## [21.0.0-SNAPSHOT] - 2026-03-26
+### Changed
+- Upgraded to Jakarta EE 10 API versions: `jee.api.version` to `10.0.0`, `servlet.api.version` to `6.0.0`, `cdi.api.version` to `4.0.1`, `persistence-api.version` to `3.1.0`
+- Updated `wildfly.version` from `26.1.2.Final` to `34.0.1.Final`
+- Updated `artemis.jms.version` from `2.24.0` to `2.40.0`
+- Updated `resteasy.version` and `resteasy-client.version` from `3.15.5.Final` / `4.7.7.Final` to `6.2.4.Final` (Jakarta EE 10 compatible)
+- Updated `openejb.version` from `8.0.13` to `10.0.0` (Jakarta EE 10 compatible)
+- Updated `wiremock.version` from `3.0.0-beta-10` to `3.10.0`
+- Updated `mockito.version` from `5.3.1` to `5.23.0`
+- Updated `byte-buddy.version` from `1.12.22` to `1.17.7`
+- Updated `jakarta.xml.bind-api.version` from `2.3.2` to `4.0.0`
+- Updated `johnzon.version` from `1.2.9` to `2.0.1`
+- Replaced `javax.activation:activation` with `jakarta.activation:jakarta.activation-api`
+- Replaced `javax.persistence:persistence-api` with `jakarta.persistence:jakarta.persistence-api`
+- Updated JSON-P versions: `glassfish-json.version` to `2.0.1`, `javax.json.version` to `2.1.3`
+- Added `jackson-datatype-jakarta-jsonp` to managed dependencies
+- Updated `maven-plugin-annotations.version` from `3.7.1` to `3.9.0`
+### Security
+- Updated `artemis.jms.version` to **2.40.0** to fix **security vulnerability CVE-2024-32114**
+  Detail: https://nvd.nist.gov/vuln/detail/CVE-2024-32114
+- Updated `artemis.jms.version` to **2.40.0** to fix **security vulnerability CVE-2023-50780**
+  Detail: https://nvd.nist.gov/vuln/detail/CVE-2023-50780
+- Updated `resteasy.version` to **6.2.4.Final** — addresses multiple CVEs present in the RESTEasy 3.x series, including unsafe deserialization and input validation issues; see https://access.redhat.com/security/cve for RESTEasy advisories
+- Updated `wildfly.version` to **34.0.1.Final** — addresses multiple CVEs present in WildFly 26.x; see https://www.wildfly.org/news/ for security advisories
+- Updated `wiremock.version` from beta `3.0.0-beta-10` to stable **3.10.0** — removes reliance on an unsupported pre-release containing unfixed security issues
+
 ## [17.104.0-M1] - 2025-07-18
 ### Added
 - Add dependency on junit 4 required by deltaspike testing framework
