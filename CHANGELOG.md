@@ -6,6 +6,18 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 
 ## [Unreleased]
 
+## [25.104.3] - 2026-10-27
+### Security
+- `jackson` (core, databind, dataformat-csv/xml, datatype-*, module-parameter-names, datatype-jakarta-jsonp)
+  2.21.5 → 2.21.8: [CVE-2026-89425](https://www.cve.org/CVERecord?id=CVE-2026-89425),
+  [CVE-2026-89407](https://www.cve.org/CVERecord?id=CVE-2026-89407),
+  [CVE-2026-91777](https://www.cve.org/CVERecord?id=CVE-2026-91777),
+  [CVE-2026-91776](https://www.cve.org/CVERecord?id=CVE-2026-91776),
+  [CVE-2026-68497](https://www.cve.org/CVERecord?id=CVE-2026-68497),
+  [CVE-2026-83557](https://www.cve.org/CVERecord?id=CVE-2026-83557),
+  [CVE-2026-19032](https://www.cve.org/CVERecord?id=CVE-2026-19032).
+  `jackson-dataformat-yaml` stays at 2.14.3 and `jackson-annotations` at 2.21.
+
 ## [25.104.2] - 2026-09-25
 ### Security
 - `postgresql` 42.7.7 → 42.7.13 through the parent `maven-parent-pom` 25.104.2:
