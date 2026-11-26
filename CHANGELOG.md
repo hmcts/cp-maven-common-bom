@@ -5,19 +5,20 @@ on [Keep a CHANGELOG](http://keepachangelog.com/). This project adheres to
 [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [25.104.5] - 2026-11-26
+### Changed
+- `com.sun.xml.bind:jaxb-impl` 2.3.1 → 4.0.6 and `com.sun.xml.bind:jaxb-core` 2.3.0.1 → 4.0.6, through the new
+  `jakarta.jaxb-impl.version` property: the 2.3.x javax JAXB implementation was forced onto Jakarta stacks such as
+  `jaxws-rt` 4. 4.0.6 matches `org.glassfish.jaxb:jaxb-runtime` in the platform common-bom. `jaxb.version` and
+  `jaxb-core.version` are unchanged, because `javax.xml.bind:jaxb-api` still uses them
+  ([PEG-3749](https://hmcts.atlassian.net/browse/PEG-3749))
 ### Security
 - `guava` 33.5.0-jre → 33.8.0-jre: [CVE-2026-102554](https://www.cve.org/CVERecord?id=CVE-2026-102554) (High,
   uncontrolled memory allocation when deserialising `CompactHashMap` / `CompactHashSet` / `MapMakerInternalMap`)
   ([PEG-3749](https://hmcts.atlassian.net/browse/PEG-3749))
 - `org.json:json` 20251224 → 20260814: [CVE-2026-59171](https://www.cve.org/CVERecord?id=CVE-2026-59171) (Moderate,
   `JSONTokener` resource exhaustion on unbounded numeric strings)
-  ([PEG-3749](https://hmcts.atlassian.net/browse/PEG-3749))
-
-### Changed
-- `com.sun.xml.bind:jaxb-impl` 2.3.1 → 4.0.6 and `com.sun.xml.bind:jaxb-core` 2.3.0.1 → 4.0.6, through the new
-  `jakarta.jaxb-impl.version` property: the 2.3.x javax JAXB implementation was forced onto Jakarta stacks such as
-  `jaxws-rt` 4. 4.0.6 matches `org.glassfish.jaxb:jaxb-runtime` in the platform common-bom. `jaxb.version` and
-  `jaxb-core.version` are unchanged, because `javax.xml.bind:jaxb-api` still uses them
   ([PEG-3749](https://hmcts.atlassian.net/browse/PEG-3749))
 
 ## [25.104.4] - 2026-11-05
