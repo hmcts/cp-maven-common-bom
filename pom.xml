@@ -38,6 +38,9 @@
         <jakarta.mail-api.version>2.1.3</jakarta.mail-api.version>
         <jakarta.transaction-api.version>2.0.1</jakarta.transaction-api.version>
         <jakarta.xml.bind-api.version>4.0.2</jakarta.xml.bind-api.version>
+        <!-- Jakarta JAXB 4 implementation (com.sun.xml.bind 4.x), matching org.glassfish.jaxb:jaxb-runtime 4.0.6 in the
+             platform common-bom. jaxb.version / jaxb-core.version (parent-pom) stay on 2.3.x for javax.xml.bind:jaxb-api. -->
+        <jakarta.jaxb-impl.version>4.0.6</jakarta.jaxb-impl.version>
         <jee.api.version>11.0.0</jee.api.version>
         <jakarta.el-api.version>6.0.1</jakarta.el-api.version>
         <persistence-api.version>3.2.0</persistence-api.version>
@@ -88,7 +91,7 @@
         <glassfish-json.version>2.0.1</glassfish-json.version>
         <johnzon.version>2.0.2</johnzon.version>
         <org.everit.json.schema.version>1.6.0</org.everit.json.schema.version>
-        <org.json.version>20251224</org.json.version>
+        <org.json.version>20260814</org.json.version>
         <parsson.version>1.1.7</parsson.version>
 
         <!-- Logging -->
@@ -136,7 +139,7 @@
         <disruptor.version>3.4.4</disruptor.version>
         <expiringmap.version>0.5.11</expiringmap.version>
         <findbugs.version>3.0.1</findbugs.version>
-        <guava.version>33.5.0-jre</guava.version>
+        <guava.version>33.8.0-jre</guava.version>
         <jolt.version>0.1.8</jolt.version>
         <metrics.version>3.2.3</metrics.version>
         <mvel2.version>2.5.2.Final</mvel2.version>
@@ -663,12 +666,12 @@
             <dependency>
                 <groupId>com.sun.xml.bind</groupId>
                 <artifactId>jaxb-core</artifactId>
-                <version>${jaxb-core.version}</version>
+                <version>${jakarta.jaxb-impl.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.sun.xml.bind</groupId>
                 <artifactId>jaxb-impl</artifactId>
-                <version>${jaxb.version}</version>
+                <version>${jakarta.jaxb-impl.version}</version>
             </dependency>
 
             <!-- ===== Logging ===== -->
